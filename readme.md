@@ -68,11 +68,11 @@ Project AEDES uses the following open licenses:
 Project AEDES is in active development and continously maintained by Cirrolytix Research Services.  
 
 Enhancement Team Members:
-- [Dominic Ligot](https://www.linkedin.com/in/docligot/), Team Lead
+- [Dominic Ligot](https://www.linkedin.com/in/docligot/), Enhancement Team Lead
 - [Mark Toledo](https://www.linkedin.com/in/toledomark/), Solution Architect
-- [Emily Vizmonte](https://www.linkedin.com/in/docligot/), Project Manager, Research Lead
-- [Mark Pascual](https://www.linkedin.com/in/toledomark/), Application Engineering Lead
-- [Xavier Puspus](https://www.linkedin.com/in/docligot/), Data Science and Engineering Lead
+- [Emily Vizmonte](https://www.linkedin.com/in/emily-jo-vizmonte-b7a09380/), Project and Research Lead
+- [Mark Pascual](https://www.linkedin.com/in/markpascual1986/), Application Engineering Lead
+- [Xavier Puspus](https://www.linkedin.com/in/xavier-puspus/), Data Science and Engineering Lead
 
 Original Team Members:
 - [Dominic Ligot](https://www.linkedin.com/in/docligot/), Chief Technology Officer
