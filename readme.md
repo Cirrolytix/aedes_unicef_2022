@@ -43,18 +43,22 @@ By doing this we are addressing 2 key challenges for public health and local gov
 
 ## Documentation
 
-To better understand the process workflow of Project AEDES, please read our [Documentation Wiki Page](https://github.com/Cirrolytix/aedes_dpg/wiki).
+To better understand the process workflow of Project AEDES, please read our [Documentation Wiki Page](https://github.com/Cirrolytix/aedes_unicef_2022/wiki).
 
 ## Browse by Topic
 
-[Objectives and Principles](https://github.com/Cirrolytix/aedes_dpg/wiki/Objectives-and-Principles)   
-[Architecture Diagrams](https://github.com/Cirrolytix/aedes_dpg/wiki/Architecture-Diagrams)  
-[Functional Documentation](https://github.com/Cirrolytix/aedes_dpg/wiki/Functional-Documentation) 
+[Objectives and Principles](https://github.com/Cirrolytix/aedes_unicef_2022/wiki/Objectives-and-Principles)   
+[Architecture Diagrams](https://github.com/Cirrolytix/aedes_unicef_2022/wiki/Architecture-Diagrams)  
+[Functional Documentation](https://github.com/Cirrolytix/aedes_unicef_2022/wiki/Functional-Documentation) 
 
 
-## Awards
-Global Award for Best Use of Data, [2019 NASA Space Apps Challenge](https://2019.spaceappschallenge.org/challenges/living-our-world/smash-your-sdgs/teams/aedes-project/project)  
-2020 Earth Observation for the Sustainable Development Goals (GEO SDG) Award, [Group on Earth Observations](https://www.earthobservations.org/geo_blog_obs.php?id=472)
+## Awards and References
+* Global Award for Best Use of Data, [2019 NASA Space Apps Challenge](https://2019.spaceappschallenge.org/challenges/living-our-world/smash-your-sdgs/teams/aedes-project/project)  
+* 2020 Earth Observation for the Sustainable Development Goals (GEO SDG) Award, [Group on Earth Observations](https://www.earthobservations.org/geo_blog_obs.php?id=472)
+
+* 2021 Digital Public Good, [DPGA](https://digitalpublicgoods.net/blog/unicef-philippines-announces-its-first-digital-public-good-pathfinding-pilot/)
+
+* 2021 SSRN, Academia Letters, [https://dx.doi.org/10.2139/ssrn.3902598](https://dx.doi.org/10.2139/ssrn.3902598)
 
 ## Licenses
 
