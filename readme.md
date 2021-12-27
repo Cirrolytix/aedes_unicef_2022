@@ -43,15 +43,15 @@ By doing this we are addressing 2 key challenges for public health and local gov
 
 ## Documentation
 
-* To better understand the process workflow of Project AEDES, please read our [Documentation Wiki Page](https://github.com/Cirrolytix/aedes_dpga/wiki) (will refer to public DPGA site).
+* To better understand the process workflow of Project AEDES, please read our [Documentation Wiki Page](https://github.com/Cirrolytix/aedes_dpg/wiki) (will refer to public DPGA site).
 * [Technical Proposal](https://github.com/Cirrolytix/aedes_unicef_2022/blob/main/design_docs/CirroLytix_AEDES_Technical_Proposal_2021.pdf)
 * [Research Paper](https://github.com/Cirrolytix/aedes_unicef_2022/blob/main/design_docs/Advanced_Early_Dengue_Prediction_and_Exp.pdf)
 
 ## Browse by Topic (Will refer back to public DPGA site)
 
-[Objectives and Principles](https://github.com/Cirrolytix/aedes_dpga/wiki/Objectives-and-Principles)   
-[Architecture Diagrams](https://github.com/Cirrolytix/aedes_dpga/wiki/Architecture-Diagrams)  
-[Functional Documentation](https://github.com/Cirrolytix/aedes_dpga/wiki/Functional-Documentation) 
+[Objectives and Principles](https://github.com/Cirrolytix/aedes_dpg/wiki/Objectives-and-Principles)   
+[Architecture Diagrams](https://github.com/Cirrolytix/aedes_dpg/wiki/Architecture-Diagrams)  
+[Functional Documentation](https://github.com/Cirrolytix/aedes_dpg/wiki/Functional-Documentation) 
 
 
 ## Awards and References
