@@ -63,12 +63,18 @@ Project AEDES uses the following open licenses:
 - [MIT License](https://github.com/Cirrolytix/aedes_dpg/blob/main/MIT.md)  
 - [Creative Commons Attribution Share Alike 4.0 International](https://github.com/Cirrolytix/aedes_dpg/blob/main/LICENSE)
 
-
 ## About
 
 Project AEDES is in active development and continously maintained by Cirrolytix Research Services.  
 
-Team Members:
+Enhancement Team Members:
+- [Dominic Ligot](https://www.linkedin.com/in/docligot/), Team Lead
+- [Mark Toledo](https://www.linkedin.com/in/toledomark/), Solution Architect
+- [Emily Vizmonte](https://www.linkedin.com/in/docligot/), Project Manager, Research Lead
+- [Mark Pascual](https://www.linkedin.com/in/toledomark/), Application Engineering Lead
+- [Xavier Puspus](https://www.linkedin.com/in/docligot/), Data Science and Engineering Lead
+
+Original Team Members:
 - [Dominic Ligot](https://www.linkedin.com/in/docligot/), Chief Technology Officer
 - [Mark Toledo](https://www.linkedin.com/in/toledomark/), Solution Architect
 - [Claire Tayco](https://www.linkedin.com/in/claire-san-juan-tayco-81361828/), Head of Research and Analytics
@@ -77,4 +83,4 @@ Team Members:
 
 We welcome collaborators. Contact us via email at support@aedesproject.org.
 
-©️ 2019-2021, [Cirrolytix Research Services](https://www.cirrolytix.com/)
+©️ 2019-2022, [Cirrolytix Research Services](https://www.cirrolytix.com/)
