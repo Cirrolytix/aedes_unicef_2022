@@ -45,7 +45,7 @@ By doing this we are addressing 2 key challenges for public health and local gov
 
 * [Technical Proposal](https://github.com/Cirrolytix/aedes_unicef_2022/blob/main/design_docs/CirroLytix_AEDES_Technical_Proposal_2021.pdf)
 * [Research Paper](https://github.com/Cirrolytix/aedes_unicef_2022/blob/main/design_docs/Advanced_Early_Dengue_Prediction_and_Exp.pdf)
-* [INFORM Epidemic Risk Model](https://github.com/Cirrolytix/aedes_unicef_2022/blob/main/design_docs/Incorporating_epidemics_risk_in_the_INFORM global_risk_index.pdf)
+* [INFORM Epidemic Risk Model](https://github.com/Cirrolytix/aedes_unicef_2022/blob/main/design_docs/Incorporating_epidemics_risk_in_the_INFORM_global_risk_index.pdf)
 
 ## Awards and Publication
 * Global Award for Best Use of Data, [2019 NASA Space Apps Challenge](https://2019.spaceappschallenge.org/challenges/living-our-world/smash-your-sdgs/teams/aedes-project/project) 
