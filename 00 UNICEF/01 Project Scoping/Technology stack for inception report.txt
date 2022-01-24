@@ -1,5 +1,5 @@
 Front-end | Basics
-	HTML - Hypertext Markup Language, a standardized system for tagging text files to achieve font, color, graphic, and hyperlink effects on World Wide Web pages.
+	HTML- Hypertext Markup Language, a standardized system for tagging text files to achieve font, color, graphic, and hyperlink effects on World Wide Web pages.
 	JavaScript - an object-oriented computer programming language commonly used to create interactive effects within web browsers.
 	CSS -Cascading Style Sheets (CSS) is a style sheet language used for describing the presentation of a document written in a markup language such as HTML. CSS is a cornerstone technology of the World Wide Web, alongside HTML and JavaScript.
 	Jquery -is a JavaScript library that allows web developers to add extra functionality to their websites. 
