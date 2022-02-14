@@ -1,0 +1,3 @@
+[submodule "Python Package/aedes"]
+	path = Python Package/aedes
+	url = https://github.com/xmpuspus/aedes
