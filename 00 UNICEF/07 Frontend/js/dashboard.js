@@ -32,6 +32,10 @@ function separator(number) {
 }
 
 function clickRegion(bounds) {
+  regionCount = 0;
+  for (const element of selectedRegionArr) {
+    map.setFeatureState({ source: "regions", id: element }, { select: false });
+  }
   document.querySelector(".mapboxgl-popup-close-button").click();
   map.setLayoutProperty("regions-fill", "visibility", "none");
   map.setLayoutProperty("provinces-fill", "visibility", "visible");
@@ -42,9 +46,22 @@ function clickRegion(bounds) {
     zoom: 8,
     essential: true,
   });
+
+  selectedRegionArr.length = 0;
+  regionCode.length = 0;
+  popCount = 0;
+  popDensity = 0;
 }
 
 function clickProvince(bounds) {
+  provinceCount = 0;
+  for (const element of selectedProvinceArr) {
+    map.setFeatureState(
+      { source: "provinces", id: element },
+      { select: false }
+    );
+  }
+
   document.querySelector(".mapboxgl-popup-close-button").click();
   map.setLayoutProperty("regions-fill", "visibility", "visible");
   map.setLayoutProperty("provinces-fill", "visibility", "none");
@@ -55,6 +72,9 @@ function clickProvince(bounds) {
     zoom: 7,
     essential: true,
   });
+  selectedProvinceArr.length = 0;
+  popCount = 0;
+  popDensity = 0;
 }
 
 mapboxgl.accessToken =
@@ -67,9 +87,14 @@ var map = new mapboxgl.Map({
 });
 
 let selectedRegionId = null;
+let selectedProvinceId = null;
 var regionCount = 0;
+var provinceCount = 0;
 var popCount = 0;
 var popDensity = 0;
+const selectedRegionArr = [];
+const selectedProvinceArr = [];
+const regionCode = []
 
 map.on("load", function () {
   const layers = [
@@ -169,6 +194,8 @@ map.on("load", function () {
     firstSymbolId
   );
 
+  console.log(map.getLayer("regions-fill"));
+
   map.addLayer({
     id: "regions-line",
     type: "line",
@@ -247,6 +274,17 @@ map.on("load", function () {
   });
 
   map.on("click", "regions-fill", function (e) {
+    selectedRegionId = e.features[0].id;
+    var index = selectedRegionArr.indexOf(selectedRegionId);
+    var codeIndex = regionCode.indexOf(e.features[0].properties.ADM1_PCODE)
+    if (index == -1) {
+      selectedRegionArr.push(selectedRegionId);
+      regionCode.push(e.features[0].properties.ADM1_PCODE)
+      // console.log(map.queryRenderedFeatures(e.point)[0].id)
+    } else {
+      selectedRegionArr.splice(index, 1);
+      regionCode.splice(codeIndex, 1);
+    }
     bounds = e.lngLat;
     const popup = new mapboxgl.Popup()
       .setLngLat(e.lngLat)
@@ -261,7 +299,6 @@ map.on("load", function () {
       )
       .addTo(map);
 
-    selectedRegionId = e.features[0].id;
     if (
       map.getFeatureState({ source: "regions", id: selectedRegionId }).select ==
       true
@@ -311,6 +348,13 @@ map.on("load", function () {
   });
 
   map.on("click", "provinces-fill", function (e) {
+    selectedProvinceId = e.features[0].id;
+    var index = selectedProvinceArr.indexOf(selectedProvinceId);
+    if (index == -1) {
+      selectedProvinceArr.push(selectedProvinceId);
+    } else {
+      selectedProvinceArr.splice(index, 1);
+    }
     bounds = e.lngLat;
     const popup = new mapboxgl.Popup()
       .setLngLat(e.lngLat)
@@ -323,32 +367,31 @@ map.on("load", function () {
       )
       .addTo(map);
 
-    selectedRegionId = e.features[0].id;
     if (
-      map.getFeatureState({ source: "provinces", id: selectedRegionId })
+      map.getFeatureState({ source: "provinces", id: selectedProvinceId })
         .select == true
     ) {
       map.setFeatureState(
-        { source: "provinces", id: selectedRegionId },
+        { source: "provinces", id: selectedProvinceId },
         { select: false }
       );
-      regionCount -= 1;
+      provinceCount -= 1;
       popCount -= parseFloat(e.features[0].properties.Population);
     } else {
       map.setFeatureState(
-        { source: "provinces", id: selectedRegionId },
+        { source: "provinces", id: selectedProvinceId },
         { select: true }
       );
-      regionCount += 1;
+      provinceCount += 1;
       popCount += parseFloat(e.features[0].properties.Population);
     }
-    if (regionCount == 0) {
+    if (provinceCount == 0) {
       document.getElementById("popCount").innerHTML = "109,035,343";
       document.getElementById("popDensity").innerHTML = "363";
     } else {
       document.getElementById("popCount").innerHTML = separator(popCount);
     }
-    document.getElementById("regionCount").innerHTML = regionCount;
+    document.getElementById("regionCount").innerHTML = provinceCount;
   });
 
   map.on("mousemove", "provinces-fill", (e) => {
