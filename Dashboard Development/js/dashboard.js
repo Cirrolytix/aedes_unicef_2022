@@ -130,7 +130,7 @@ function clickProvince(bounds) {
     popCount += regionsDataDict[b][0];
     totalArea += regionsDataDict[b][2];
   }
-  popDensity = roundToTwo(separator(popCount / totalArea));
+  popDensity = separator(roundToTwo(popCount / totalArea));
 
   document.querySelector(".mapboxgl-popup-close-button").click();
   map.setLayoutProperty("regions-fill", "visibility", "visible");
@@ -381,7 +381,7 @@ map.on("load", function () {
         regionCount -= 1;
         totalArea -= parseFloat(e.features[0].properties.Area);
         popCount -= parseFloat(e.features[0].properties.Population);
-        popDensity = parseFloat(roundToTwo(separator(popCount / totalArea)));
+        popDensity = separator(roundToTwo(popCount / totalArea));
       } else {
         selReg = false;
       }
@@ -394,7 +394,7 @@ map.on("load", function () {
       regionCount += 1;
       totalArea += parseFloat(e.features[0].properties.Area);
       popCount += parseFloat(e.features[0].properties.Population);
-      popDensity = parseFloat(roundToTwo(separator(popCount / totalArea)));
+      popDensity = separator(roundToTwo(popCount / totalArea));
     }
     if (regionCount == 0) {
       document.getElementById("popCount").innerHTML = "109,035,343";
