@@ -27,29 +27,27 @@
       <div class="w3-display-right">
         <button class="w3-button w3-white w3-round" style="margin-left: 20px; margin-right: 20px;">Export</button>
         <button class="w3-button w3-white w3-round" style="margin-right: 20px;">How It Works</button>
-        <select class="w3-select w3-bar-item w3-quarter w3-round " name="option">
+        <select class="w3-select w3-bar-item w3-quarter w3-round " id="regionSelection" onchange="regionalData(this);" name="option">
           <option value="">Get Regional Data</option>
-          <option value="ncr">NCR</option>
-          <option value="1">Region I - Ilocos Region</option>
-          <option value="2">Region II - Cagayan Valley</option>
-          <option value="3">Region III - Central Luzon</option>
-          <option value="4a">Region IV-A - CALABARZON</option>
-          <option value="4b">Region IV-B - MIMAROPA</option>
-          <option value="5">Region V - Bicol Region</option>
-          <option value="6">Region VI - Western Visayas</option>
-          <option value="7">Region VII - Central Visayas</option>
-          <option value="8">Region VIII - Eastern Visayas</option>
+          <option value="1">BARMM</option>
+          <option value="2">CAR</option>
+          <option value="3">NCR</option>
+          <option value="4">Region I - Ilocos Region</option>
+          <option value="5">Region II - Cagayan Valley</option>
+          <option value="6">Region III - Central Luzon</option>
+          <option value="7">Region IV-A - CALABARZON</option>
+          <option value="8">Region IV-B - MIMAROPA</option>
+          <option value="10">Region V - Bicol Region</option>
+          <option value="11">Region VI - Western Visayas</option>
+          <option value="12">Region VII - Central Visayas</option>
+          <option value="13">Region VIII - Eastern Visayas</option>
           <option value="9">Region IX - Zamboanga Peninsula</option>
-          <option value="10">Region X - Northern Mindanao</option>
-          <option value="11">Region XI - Davao Region</option>
-          <option value="12">Region XII - SOCCSKSARGEN</option>
-          <option value="barmm">BARMM</option>
-          <option value="car">CAR</option>
-          <option value="caraga">CARAGA</option>
+          <option value="14">Region X - Northern Mindanao</option>
+          <option value="15">Region XI - Davao Region</option>
+          <option value="16">Region XII - SOCCSKSARGEN</option>
+          <option value="17">Region XIII - CARAGA</option>
         </select>
       </div>
-
-
     </div>
   </div>
 
@@ -66,25 +64,25 @@
         </div>
       </div>
       <div class="w3-panel" style="margin-bottom: 0;">
-        <select class="w3-select w3-round w3-border" name="option">
+        <select class="w3-select w3-round w3-border" id="regionSelection" onchange = "regionalData(this);" name="option">
           <option value="">Get Regional Data</option>
-          <option value="ncr">NCR</option>
-          <option value="1">Region I - Ilocos Region</option>
-          <option value="2">Region II - Cagayan Valley</option>
-          <option value="3">Region III - Central Luzon</option>
-          <option value="4a">Region IV-A - CALABARZON</option>
-          <option value="4b">Region IV-B - MIMAROPA</option>
-          <option value="5">Region V - Bicol Region</option>
-          <option value="6">Region VI - Western Visayas</option>
-          <option value="7">Region VII - Central Visayas</option>
-          <option value="8">Region VIII - Eastern Visayas</option>
+          <option value="1">BARMM</option>
+          <option value="2">CAR</option>
+          <option value="3">NCR</option>
+          <option value="4">Region I - Ilocos Region</option>
+          <option value="5">Region II - Cagayan Valley</option>
+          <option value="6">Region III - Central Luzon</option>
+          <option value="7">Region IV-A - CALABARZON</option>
+          <option value="8">Region IV-B - MIMAROPA</option>
+          <option value="10">Region V - Bicol Region</option>
+          <option value="11">Region VI - Western Visayas</option>
+          <option value="12">Region VII - Central Visayas</option>
+          <option value="13">Region VIII - Eastern Visayas</option>
           <option value="9">Region IX - Zamboanga Peninsula</option>
-          <option value="10">Region X - Northern Mindanao</option>
-          <option value="11">Region XI - Davao Region</option>
-          <option value="12">Region XII - SOCCSKSARGEN</option>
-          <option value="barmm">BARMM</option>
-          <option value="car">CAR</option>
-          <option value="caraga">CARAGA</option>
+          <option value="14">Region X - Northern Mindanao</option>
+          <option value="15">Region XI - Davao Region</option>
+          <option value="16">Region XII - SOCCSKSARGEN</option>
+          <option value="17">Region XIII - CARAGA</option>
         </select>
       </div>
     </div>
@@ -193,88 +191,23 @@
     <div class="w3-panel w3-animate-left content w3-responsive" id="table-content"
       style="height: calc(100vh - 65px); padding:0; display:none">
       <table class="w3-table w3-striped w3-white">
-        <th>Test 1</th>
-        <th>Test 2</th>
-        <th>Test 3</th>
+        <th>Test Header 1</th>
+        <th>Test Header 2</th>
+        <th>Test Header 3</th>
         <tr>
-          <td>asdasdasdas</td>
-          <td>sadasdasdasdasdasdasdasd</td>
-          <td>asdasdasdasdasdasdasdasdasdasdas</td>
+          <td>Test Data 1</td>
+          <td>Test Data 2</td>
+          <td>Test Data 3</td>
         </tr>
         <tr>
-          <td>asdasdasdas</td>
-          <td>sadasdasdasdasdasdasdasd</td>
-          <td>asdasdasdasdasdasdasdasdasdasdas</td>
+          <td>Test Data 1</td>
+          <td>Test Data 2</td>
+          <td>Test Data 3</td>
         </tr>
         <tr>
-          <td>asdasdasdas</td>
-          <td>sadasdasdasdasdasdasdasd</td>
-          <td>asdasdasdasdasdasdasdasdasdasdas</td>
-        </tr>
-        <tr>
-          <td>asdasdasdas</td>
-          <td>sadasdasdasdasdasdasdasd</td>
-          <td>asdasdasdasdasdasdasdasdasdasdas</td>
-        </tr>
-        <tr>
-          <td>asdasdasdas</td>
-          <td>sadasdasdasdasdasdasdasd</td>
-          <td>asdasdasdasdasdasdasdasdasdasdas</td>
-        </tr>
-        <tr>
-          <td>asdasdasdas</td>
-          <td>sadasdasdasdasdasdasdasd</td>
-          <td>asdasdasdasdasdasdasdasdasdasdas</td>
-        </tr>
-        <tr>
-          <td>asdasdasdas</td>
-          <td>sadasdasdasdasdasdasdasd</td>
-          <td>asdasdasdasdasdasdasdasdasdasdas</td>
-        </tr>
-        <tr>
-          <td>asdasdasdas</td>
-          <td>sadasdasdasdasdasdasdasd</td>
-          <td>asdasdasdasdasdasdasdasdasdasdas</td>
-        </tr>
-        <tr>
-          <td>asdasdasdas</td>
-          <td>sadasdasdasdasdasdasdasd</td>
-          <td>asdasdasdasdasdasdasdasdasdasdas</td>
-        </tr>
-        <tr>
-          <td>asdasdasdas</td>
-          <td>sadasdasdasdasdasdasdasd</td>
-          <td>asdasdasdasdasdasdasdasdasdasdas</td>
-        </tr>
-        <tr>
-          <td>asdasdasdas</td>
-          <td>sadasdasdasdasdasdasdasd</td>
-          <td>asdasdasdasdasdasdasdasdasdasdas</td>
-        </tr>
-        <tr>
-          <td>asdasdasdas</td>
-          <td>sadasdasdasdasdasdasdasd</td>
-          <td>asdasdasdasdasdasdasdasdasdasdas</td>
-        </tr>
-        <tr>
-          <td>asdasdasdas</td>
-          <td>sadasdasdasdasdasdasdasd</td>
-          <td>asdasdasdasdasdasdasdasdasdasdas</td>
-        </tr>
-        <tr>
-          <td>asdasdasdas</td>
-          <td>sadasdasdasdasdasdasdasd</td>
-          <td>asdasdasdasdasdasdasdasdasdasdas</td>
-        </tr>
-        <tr>
-          <td>asdasdasdas</td>
-          <td>sadasdasdasdasdasdasdasd</td>
-          <td>asdasdasdasdasdasdasdasdasdasdas</td>
-        </tr>
-        <tr>
-          <td>asdasdasdas</td>
-          <td>sadasdasdasdasdasdasdasd</td>
-          <td>asdasdasdasdasdasdasdasdasdasdas</td>
+          <td>Test Data 1</td>
+          <td>Test Data 2</td>
+          <td>Test Data 3</td>
         </tr>
       </table>
     </div>
