@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>AEDES W3Mockup</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="https://api.mapbox.com/mapbox-gl-js/v2.8.2/mapbox-gl.css" rel="stylesheet">
+  <script src="https://api.mapbox.com/mapbox-gl-js/v2.8.2/mapbox-gl.js"></script>
+  <style>
+    html,
+    body,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5 {
+      font-family: "Raleway", sans-serif
+    }
+
+    #map {
+      position: relative;
+      top: 0;
+      bottom: 0;
+      width: 100%;
+      height: 100%
+    }
+  </style>
+</head>
+
+<body class="w3-light-grey">
+
+  <div class="w3-bar w3-top w3-black w3-large w3-display-container" style="z-index:4; height: 65px;">
+    <button class="w3-bar-item w3-button w3-hide-large w3-hover-none w3-hover-text-light-grey w3-display-right"
+      onclick="w3_open();"><em class="fa fa-bars w3-padding"></em>Menu</button>
+    <span class="w3-bar-item w3-left w3-display-left"><img src="img/logo.png" height="36px" width="auto"></span>
+  </div>
+
+  <nav class="w3-sidebar w3-collapse w3-white w3-animate-left" style="z-index:3;width:300px;" id="mySidebar"><br>
+    <div class="w3-bar-block">
+      <a href="#" class="w3-bar-item w3-button w3-padding-16 w3-hide-large w3-dark-grey w3-hover-black"
+        onclick="w3_close()" title="close menu"><em class="fa fa-remove fa-fw"></em>  Close Menu</a>
+      <a href="home.html" class="w3-bar-item w3-button w3-padding w3-blue w3-large"><em class="fa fa-home fa-fw"></em> 
+        Home</a>
+      <a href="#" class="w3-bar-item w3-button w3-padding w3-large"><em class="fa fa-question fa-fw"></em>  How It
+        Works</a>
+      <a href="dashboard.html" class="w3-bar-item w3-button w3-padding w3-large"><em
+          class="fa fa-dashboard fa-fw"></em>  Risk Dashboard</a>
+      <a href="#" class="w3-bar-item w3-button w3-padding w3-large"><em class="fa fa-cog fa-fw"></em>  API</a>
+      <a href="#" class="w3-bar-item w3-button w3-padding w3-large"><em class="fa fa-info-circle fa-fw"></em>  About</a>
+    </div>
+  </nav>
+
+  <div class="w3-overlay w3-hide-large w3-animate-opacity" onclick="w3_close()" style="cursor:pointer"
+    title="close side menu" id="myOverlay"></div>
+
+  <div class="w3-main" style="margin-left:300px;margin-top:55px;">
+    <header class="w3-container w3-bar w3-display-container" style="padding-top:22px">
+
+
+      <div class="w3-row">
+        <div class="w3-threequarter ">
+          <h2><strong>Project AEDES</strong></h2>
+          <h4>Advanced Early Detection and Exploration Service</h4>
+        </div>
+        <div class="w3-quarter">
+          <select class="w3-select w3-round" name="option">
+            <option value="">Get Regional Data</option>
+            <option value="ncr">NCR</option>
+            <option value="1">Region I - Ilocos Region</option>
+            <option value="2">Region II - Cagayan Valley</option>
+            <option value="3">Region III - Central Luzon</option>
+            <option value="4a">Region IV-A - CALABARZON</option>
+            <option value="4b">Region IV-B - MIMAROPA</option>
+            <option value="5">Region V - Bicol Region</option>
+            <option value="6">Region VI - Western Visayas</option>
+            <option value="7">Region VII - Central Visayas</option>
+            <option value="8">Region VIII - Eastern Visayas</option>
+            <option value="9">Region IX - Zamboanga Peninsula</option>
+            <option value="10">Region X - Northern Mindanao</option>
+            <option value="11">Region XI - Davao Region</option>
+            <option value="12">Region XII - SOCCSKSARGEN</option>
+            <option value="barmm">BARMM</option>
+            <option value="car">CAR</option>
+            <option value="caraga">CARAGA</option>
+          </select>
+        </div>
+      </div>
+      <p style="text-align: justify;">AEDES aims to improve public health response against dengue in the Philippines by
+        predicting dengue cases from climate and digital data and pinpointing possible hotspots from satellite data.
+        Using AEDES will help get ahead of the lagged delay of dengue reporting by using real-time information to infer
+        if dengue cases and deaths are about to spike and anticipate areas that may be affected by dengue to prioritize
+        health aid, supplies, and proactive fumigation to prevent the outbreaks.
+      </p>
+    </header>
+
+    <div class="w3-panel" style="height: 65vh;">
+      <div id="map"></div>
+    </div>
+
+    <!-- End page content -->
+  </div>
+
+  <script type="text/javascript" src="js/dashboard.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,13 @@
+body {
+    padding: 0px;
+    margin: 0px;
+    background-color: #353535;
+    color: white;
+}
+
+
+@media screen and (max-width:600px){
+    #app-logo{
+        height: 30px !important;
+    }
+}

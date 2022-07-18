@@ -1,0 +1,46 @@
+Front-end | Basics
+	HTML- Hypertext Markup Language, a standardized system for tagging text files to achieve font, color, graphic, and hyperlink effects on World Wide Web pages.
+	JavaScript - an object-oriented computer programming language commonly used to create interactive effects within web browsers.
+	CSS -Cascading Style Sheets (CSS) is a style sheet language used for describing the presentation of a document written in a markup language such as HTML. CSS is a cornerstone technology of the World Wide Web, alongside HTML and JavaScript.
+	Jquery -is a JavaScript library that allows web developers to add extra functionality to their websites. 
+
+Front-end | Frameworks
+	ReactJS -React makes it painless to create interactive UIs. Design simple views for each state in your application, and React will efficiently update and render just the right components when your data changes.
+	Material UI - Material-UI is an open-source project that features React components that implement Google’s Material Design.
+	Redux - is an open-source JavaScript library for managing the application state.
+	Webpack - is a module bundler for modern Java script applications.
+	Bootstrap - is the most popular CSS Framework for developing responsive and mobile-first websites.
+	LessJS - is a backwards-compatible language extension for CSS
+
+Front-end | Tools
+	Mapbox -provides powerful routing engines, accurate, traffic-powered travel times, and intuitive turn-by-turn directions to help you build engaging navigation experiences.
+	D3 (Data-Drive Documents) - is a JavaScript library for manipulating documents based on data. D3 helps you bring data to life using HTML, SVG, and CSS. D3’s emphasis on web standards gives you the full capabilities of modern browsers without tying yourself to a proprietary framework, combining powerful visualization components and a data-driven approach to DOM manipulation.
+
+Back-end 
+	Python -is a popular programming language. Python can be used on a server to create web applications.
+	Django -Django is a high-level Python web framework that encourages rapid development and clean, pragmatic design.
+	Nginx - accelerates content and application delivery, improves security, and facilitates availability and scalability for the busiest websites on the Internet.
+	Django-REST - Django REST framework is a powerful and flexible toolkit for building Web APIs.
+	Solr - is the popular, blazing-fast, open source enterprise search platform built on Apache Lucene
+	Tomcat - is a free and open-source implementation of the Jakarta Servlet, Jakarta Expression Language, and WebSocket technologies.
+
+Database | RDBMS
+	Postgres - also known as Postgres, is a free and open-source relational database management system (RDBMS) emphasizing extensibility and SQL compliance.
+
+Dev-Ops | Infrastructures
+	Amazon EC2 - Amazon Elastic Compute Cloud (Amazon EC2) provides scalable computing capacity in the Amazon Web Services (AWS) Cloud.
+	Amazon RDS - Amazon Relational Database Service (Amazon RDS) makes it easy to set up, operate, and scale a relational database in the cloud. 
+	Amazon S3 - Amazon Simple Storage Service (Amazon S3) is an object storage service offering industry-leading scalability, data availability, security, and performance.
+	Porkbun - is an amazingly awesome ICANN accredited domain name registrar based out of the Pacific Northwest. 
+	Namecheap - is a leading ICANN Accredited Domain Registrar, serving over 2 million customers with over 13 million domains worldwide.
+
+Dev-Ops | Develop
+	Github - is a web-based version-control and collaboration platform for software developers. 
+	Git - is a distributed revision control and source code management system with an emphasis on speed.
+	Pycharm - is a hybrid-platform developed by JetBrains as an IDE for Python. It is commonly used for Python application development.
+
+Data Management System
+	CKAN - is the leading data management software. It is usable both ‘out of the box’ and as a powerful framework for creating more tailored systems. CKAN’s combination of open-source codebase and enterprise support make it uniquely attractive for organizations looking to build customized, enterprise- or government-grade solutions.
+
+	
+
