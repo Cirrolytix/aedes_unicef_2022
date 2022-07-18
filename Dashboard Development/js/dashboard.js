@@ -1,5 +1,5 @@
-var mySidebar = document.getElementById("mySidebar");
-var overlayBg = document.getElementById("myOverlay");
+let mySidebar = document.getElementById("mySidebar");
+let overlayBg = document.getElementById("myOverlay");
 
 function w3_open() {
   if (mySidebar.style.display === "block") {
@@ -17,8 +17,8 @@ function w3_close() {
 }
 
 function switchTab(tabName) {
-  var i;
-  var x = document.getElementsByClassName("content");
+  let i;
+  let x = document.getElementsByClassName("content");
   for (i = 0; i < x.length; i++) {
     x[i].style.display = "none";
   }
@@ -26,7 +26,7 @@ function switchTab(tabName) {
 }
 
 function separator(number) {
-  var str = number.toString().split(".");
+  let str = number.toString().split(".");
   str[0] = str[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
   return str.join(".");
 }
@@ -35,7 +35,7 @@ function roundToTwo(num) {
   return +(Math.round(num + "e+2") + "e-2");
 }
 
-var regionsDict = {
+let regionsDict = {
   1: [9, 20, 29, 36, 45, 49, 87],
   2: [30, 46, 53, 58, 67, 79],
   3: [13, 15, 40, 86],
@@ -55,7 +55,7 @@ var regionsDict = {
   17: [1, 23, 32, 64, 65],
 };
 
-var regionsDataDict = {
+let regionsDataDict = {
   1: [4404288, 120, 36650.95],
   2: [1797660, 91, 19818.12],
   3: [13484462, 21765, 619.54],
@@ -75,11 +75,52 @@ var regionsDataDict = {
   17: [2804788, 133, 21120.56],
 };
 
+function regionalData(selectObject) {
+  let selectedObject = selectObject.value;
+  if (selectedObject == "") {
+    return undefined
+  }
+  let index = selectedRegionArr.indexOf(selectedObject);
+  if (
+    map.getFeatureState({ source: "regions", id: selectedObject }).select ==
+    true
+  ) {
+    map.setFeatureState(
+      { source: "regions", id: selectedObject },
+      { select: false }
+    );
+    selectedRegionArr.splice(index, 1);
+    regionCount -= 1;
+    totalArea -= parseFloat(regionsDataDict[selectedObject][2]);
+    popCount -= parseFloat(regionsDataDict[selectedObject][0]);
+    popDensity = separator(roundToTwo(popCount / totalArea));
+  } else {
+    map.setFeatureState(
+      { source: "regions", id: selectedObject },
+      { select: true }
+    );
+    selectedRegionArr.push(selectedObject);
+    regionCount += 1;
+    totalArea += parseFloat(regionsDataDict[selectedObject][2]);
+    popCount += parseFloat(regionsDataDict[selectedObject][0]);
+    popDensity = separator(roundToTwo(popCount / totalArea));
+  }
+  if (regionCount == 0) {
+    document.getElementById("popCount").innerHTML = "109,035,343";
+    document.getElementById("popDensity").innerHTML = "363";
+  } else {
+    document.getElementById("popCount").innerHTML = separator(popCount);
+    document.getElementById("popDensity").innerHTML = separator(popDensity);
+  }
+  document.getElementById("selectedCount").innerHTML = regionCount;
+}
+
 function clickRegion(bounds) {
+  $('#regionSelection').prop('disabled', true);
   regionCount = 0;
   for (const element of selectedRegionArr) {
     map.setFeatureState({ source: "regions", id: element }, { select: false });
-    var selectProvinces = regionsDict[element];
+    let selectProvinces = regionsDict[element];
     for (const a of selectProvinces) {
       map.setFeatureState({ source: "provinces", id: a }, { select: true });
       selectedProvinceArr.push(parseInt(a));
@@ -104,18 +145,18 @@ function clickRegion(bounds) {
 }
 
 function clickProvince(bounds) {
+  $('#regionSelection').prop('disabled', false);
   provinceCount = 0;
   popCount = 0;
   popDensity = 0;
   totalArea = 0;
-  console.log(selectedProvinceArr)
   for (const element of selectedProvinceArr) {
     map.setFeatureState(
       { source: "provinces", id: element },
       { select: false }
     );
-    for (var a in regionsDict) {
-      var prov = regionsDict[a];
+    for (let a in regionsDict) {
+      let prov = regionsDict[a];
       if (jQuery.inArray(element, prov) != -1) {
         map.setFeatureState({ source: "regions", id: a }, { select: true });
         if (jQuery.inArray(parseInt(a), selectedRegionArr) == -1) {
@@ -153,7 +194,7 @@ function clickProvince(bounds) {
 
 mapboxgl.accessToken =
   "pk.eyJ1IjoibWl5dWZpIiwiYSI6ImNsMjdteGV6bzAwenczY21tbXA5aXBscmkifQ.DSm1afXHMkj3Gga6-XVuZA";
-var map = new mapboxgl.Map({
+let map = new mapboxgl.Map({
   container: "map",
   style: "mapbox://styles/mapbox/streets-v11",
   center: [123.1972748853604, 11.902259851314795],
@@ -162,13 +203,13 @@ var map = new mapboxgl.Map({
 
 let selectedRegionId = null;
 let selectedProvinceId = null;
-var regionCount = 0;
-var provinceCount = 0;
-var popCount = 0;
-var popDensity = 0;
-var totalArea = 0;
-var selProv = false;
-var selReg = false;
+let regionCount = 0;
+let provinceCount = 0;
+let popCount = 0;
+let popDensity = 0;
+let totalArea = 0;
+let selProv = false;
+let selReg = false;
 const selectedRegionArr = [];
 const selectedProvinceArr = [];
 const testArr = [];
@@ -352,8 +393,8 @@ map.on("load", function () {
 
   map.on("click", "regions-fill", function (e) {
     selectedRegionId = e.features[0].id;
-    var index = selectedRegionArr.indexOf(selectedRegionId);
-    
+    let index = selectedRegionArr.indexOf(selectedRegionId);
+
     bounds = e.lngLat;
     const popup = new mapboxgl.Popup()
       .setLngLat(e.lngLat)
@@ -426,8 +467,8 @@ map.on("load", function () {
 
   map.on("click", "provinces-fill", function (e) {
     selectedProvinceId = e.features[0].id;
-    var index = selectedProvinceArr.indexOf(selectedProvinceId);
-    
+    let index = selectedProvinceArr.indexOf(selectedProvinceId);
+
     bounds = e.lngLat;
     const popup = new mapboxgl.Popup()
       .setLngLat(e.lngLat)
