@@ -61,6 +61,7 @@ const regionsDict = {
 };
 
 // Data of the Regions
+/*
 const regionsDataDict = {
   1: [4404288, 120, 36650.95], //Population, Population Density, Area
   2: [1797660, 91, 19818.12],
@@ -80,6 +81,26 @@ const regionsDataDict = {
   16: [4901486, 215, 22786.08],
   17: [2804788, 133, 21120.56],
 };
+*/
+function extractData(file) {
+	var xhttp = new XMLHttpRequest();
+	xhttp.onreadystatechange = function() {
+		if (this.readyState == 4 && this.status == 200) {
+			dataArray = JSON.parse(this.responseText);
+			regionsDataDict = {}; 
+			for (n = 0; n <= dataArray.length; n++) {
+				regionsDataDict[n+1] = dataArray[n];
+			}
+			delete regionsDataDict[18];
+			//regionsDataDict.pop();
+		}
+	};
+	xhttp.open("GET", "extraction/read_csv.php?data=" + file, true);
+	xhttp.send();	
+}
+
+extractData(1);
+
 
 const regionsDengueCases = {
   1: [20001, 30001, 40001, 50001, 60001, 70001], // 2016, 2017, 2018, 2019, 2020, 2021
