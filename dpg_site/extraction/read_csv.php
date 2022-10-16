@@ -15,6 +15,10 @@ switch($filename) {
 	case 1:
 		print_r(extractFile('https://raw.githubusercontent.com/Cirrolytix/aedes_unicef_2022/main/dpg_extraction/regionsDataDict.csv'));
 		break;
+	case 2:
+		print_r(extractFile('https://raw.githubusercontent.com/Cirrolytix/aedes_unicef_2022/main/dpg_extraction/regionsDengueCases.csv'));
+		break;
 	default: 
 		break;
 }
+

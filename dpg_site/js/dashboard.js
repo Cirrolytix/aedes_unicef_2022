@@ -82,7 +82,7 @@ const regionsDataDict = {
   17: [2804788, 133, 21120.56],
 };
 */
-function extractData(file) {
+function extractDataDict() {
 	var xhttp = new XMLHttpRequest();
 	xhttp.onreadystatechange = function() {
 		if (this.readyState == 4 && this.status == 200) {
@@ -92,16 +92,32 @@ function extractData(file) {
 				regionsDataDict[n+1] = dataArray[n];
 			}
 			delete regionsDataDict[18];
-			//regionsDataDict.pop();
 		}
 	};
-	xhttp.open("GET", "extraction/read_csv.php?data=" + file, true);
+	xhttp.open("GET", "extraction/read_csv.php?data=1", true);
 	xhttp.send();	
 }
 
-extractData(1);
+function extractDengueCases() {
+	var xhttp = new XMLHttpRequest();
+	xhttp.onreadystatechange = function() {
+		if (this.readyState == 4 && this.status == 200) {
+			dataArray = JSON.parse(this.responseText);
+			regionsDengueCases = {}; 
+			for (n = 0; n <= dataArray.length; n++) {
+				regionsDengueCases[n+1] = dataArray[n];
+			}
+			delete regionsDengueCases[18];
+		}
+	};
+	xhttp.open("GET", "extraction/read_csv.php?data=2", true);
+	xhttp.send();	
+}
 
+extractDataDict();
+extractDengueCases();
 
+/*
 const regionsDengueCases = {
   1: [20001, 30001, 40001, 50001, 60001, 70001], // 2016, 2017, 2018, 2019, 2020, 2021
   2: [20002, 30002, 40002, 50002, 60002, 70002],
@@ -121,6 +137,7 @@ const regionsDengueCases = {
   16: [20016, 30016, 40016, 50016, 60016, 70016],
   17: [20017, 30017, 40017, 50017, 60017, 70017],
 };
+*/
 
 // Function for selecting regional data from the dropdown
 function regionalData(selectObject) {
@@ -475,7 +492,7 @@ map.on("load", function () {
     const dengueLineChart = new Chart(ctx, {
       type: "line",
       data: {
-        labels: ["2016", "2017", "2018", "2019", "2020", "2021"],
+        labels: ["2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020"],
         datasets: [
           {
             label: "Dengue Cases Recorded",
