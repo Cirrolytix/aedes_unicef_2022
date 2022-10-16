@@ -1,3 +1,4 @@
+// For mobile sidebar
 let mySidebar = document.getElementById("mySidebar");
 let overlayBg = document.getElementById("myOverlay");
 
@@ -16,6 +17,7 @@ function w3_close() {
   overlayBg.style.display = "none";
 }
 
+// For switching layouts in sidebar
 function switchTab(tabName) {
   let i;
   let x = document.getElementsByClassName("content");
@@ -25,38 +27,42 @@ function switchTab(tabName) {
   document.getElementById(tabName).style.display = "block";
 }
 
+// Separator function for numbers greater than 999
 function separator(number) {
   let str = number.toString().split(".");
   str[0] = str[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
   return str.join(".");
 }
 
+// Rounding function
 function roundToTwo(num) {
   return +(Math.round(num + "e+2") + "e-2");
 }
 
-let regionsDict = {
-  1: [9, 20, 29, 36, 45, 49, 87],
-  2: [30, 46, 53, 58, 67, 79],
-  3: [13, 15, 40, 86],
-  4: [11, 50, 66, 83],
-  5: [18, 27, 44],
-  6: [3, 8, 31, 33, 35, 52, 56, 81, 82],
-  7: [42, 43, 51, 55, 71],
-  8: [14, 34, 37, 47, 62],
-  9: [38, 39, 76],
-  10: [7, 28, 57, 63, 77, 85],
-  11: [5, 26, 68, 70, 73, 80],
-  12: [17, 41, 75, 88],
-  13: [19, 21, 59, 60, 74, 78, 84],
-  14: [4, 10, 12, 54, 72],
-  15: [6, 22, 24, 48, 69],
-  16: [2, 16, 25, 61],
-  17: [1, 23, 32, 64, 65],
+// Provinces located in the Regions
+const regionsDict = {
+  1: [9, 20, 29, 36, 45, 49, 87], // BARMM
+  2: [30, 46, 53, 58, 67, 79], // CAR
+  3: [13, 15, 40, 86], // NCR
+  4: [11, 50, 66, 83], // REGION I
+  5: [18, 27, 44], // REGION II
+  6: [3, 8, 31, 33, 35, 52, 56, 81, 82], // REGION III
+  7: [42, 43, 51, 55, 71], // REGION 4A
+  8: [14, 34, 37, 47, 62], // REGION 4B
+  9: [38, 39, 76], // REGION IX
+  10: [7, 28, 57, 63, 77, 85], // REGION V
+  11: [5, 26, 68, 70, 73, 80], // REGION VI
+  12: [17, 41, 75, 88], // REGION VII
+  13: [19, 21, 59, 60, 74, 78, 84], // REGION VIII
+  14: [4, 10, 12, 54, 72], // REGION X
+  15: [6, 22, 24, 48, 69], // REGION XI
+  16: [2, 16, 25, 61], // REGION XII
+  17: [1, 23, 32, 64, 65], // REGION XIII
 };
 
-let regionsDataDict = {
-  1: [4404288, 120, 36650.95],
+// Data of the Regions
+const regionsDataDict = {
+  1: [4404288, 120, 36650.95], //Population, Population Density, Area
   2: [1797660, 91, 19818.12],
   3: [13484462, 21765, 619.54],
   4: [5301139, 409, 12964.62],
@@ -75,10 +81,31 @@ let regionsDataDict = {
   17: [2804788, 133, 21120.56],
 };
 
+const regionsDengueCases = {
+  1: [20001, 30001, 40001, 50001, 60001, 70001], // 2016, 2017, 2018, 2019, 2020, 2021
+  2: [20002, 30002, 40002, 50002, 60002, 70002],
+  3: [20003, 30003, 40003, 50003, 60003, 70003],
+  4: [20004, 30004, 40004, 50004, 60004, 70004],
+  5: [20005, 30005, 40005, 50005, 60005, 70005],
+  6: [20006, 30006, 40006, 50006, 60006, 70006],
+  7: [20007, 30007, 40007, 50007, 60007, 70007],
+  8: [20008, 30008, 40008, 50008, 60008, 70008],
+  9: [20009, 30009, 40009, 50009, 60009, 70009],
+  10: [20010, 30010, 40010, 50010, 60010, 70010],
+  11: [20011, 30011, 40011, 50011, 60011, 70011],
+  12: [20012, 30012, 40012, 50012, 60012, 70012],
+  13: [20013, 30013, 40013, 50013, 60013, 70013],
+  14: [20014, 30014, 40014, 50014, 60014, 70014],
+  15: [20015, 30015, 40015, 50015, 60015, 70015],
+  16: [20016, 30016, 40016, 50016, 60016, 70016],
+  17: [20017, 30017, 40017, 50017, 60017, 70017],
+};
+
+// Function for selecting regional data from the dropdown
 function regionalData(selectObject) {
   let selectedObject = selectObject.value;
   if (selectedObject == "") {
-    return undefined
+    return undefined;
   }
   let index = selectedRegionArr.indexOf(selectedObject);
   if (
@@ -115,8 +142,9 @@ function regionalData(selectObject) {
   document.getElementById("selectedCount").innerHTML = regionCount;
 }
 
+// Function for getting province data from the regions selected
 function clickRegion(bounds) {
-  $('#regionSelection').prop('disabled', true);
+  $("#regionSelection").prop("disabled", true);
   regionCount = 0;
   for (const element of selectedRegionArr) {
     map.setFeatureState({ source: "regions", id: element }, { select: false });
@@ -144,8 +172,9 @@ function clickRegion(bounds) {
   selProv = true;
 }
 
+// Function for getting region data from the provinces selected
 function clickProvince(bounds) {
-  $('#regionSelection').prop('disabled', false);
+  $("#regionSelection").prop("disabled", false);
   provinceCount = 0;
   popCount = 0;
   popDensity = 0;
@@ -214,6 +243,7 @@ const selectedRegionArr = [];
 const selectedProvinceArr = [];
 const testArr = [];
 
+// Map functions
 map.on("load", function () {
   const layers = [
     "0-11.6k",
@@ -271,6 +301,7 @@ map.on("load", function () {
     data: "./provinces_id.geojson",
   });
 
+  // Region fill layer
   map.addLayer(
     {
       id: "regions-fill",
@@ -312,8 +343,7 @@ map.on("load", function () {
     firstSymbolId
   );
 
-  // console.log(map.getLayer("regions-fill"));
-
+  // Region line layer
   map.addLayer({
     id: "regions-line",
     type: "line",
@@ -332,6 +362,7 @@ map.on("load", function () {
     },
   });
 
+  // Provinces fill layer
   map.addLayer(
     {
       id: "provinces-fill",
@@ -373,6 +404,7 @@ map.on("load", function () {
     firstSymbolId
   );
 
+  // Provinces line layer
   map.addLayer({
     id: "provinces-line",
     type: "line",
@@ -391,6 +423,7 @@ map.on("load", function () {
     },
   });
 
+  // Click function when regions-fill layer is clicked
   map.on("click", "regions-fill", function (e) {
     selectedRegionId = e.features[0].id;
     let index = selectedRegionArr.indexOf(selectedRegionId);
@@ -403,11 +436,42 @@ map.on("load", function () {
           e.features[0].properties.ADM1ALT1EN +
           "</h5><h6>Population: " +
           separator(e.features[0].properties.Population) +
-          "</h6><h6>Dengue Cases: " +
+          "</h6><h6>Total Dengue Cases: " +
           separator(e.features[0].properties.DengueCases) +
-          `</h6><button class = "w3-btn w3-border w3-round" onclick = "clickRegion(bounds)"><em class = "fa fa-search fa-fw"></em></button>`
+          `</h6><button class = "w3-btn w3-border w3-round" onclick = "clickRegion(bounds)"><em class = "fa fa-search fa-fw"></em></button>
+          <br>
+          <canvas id="dengueLineChart" width="400" height="350"></canvas>
+          <style>
+            .mapboxgl-popup-content {
+              width: 300px;
+              height: 400px;
+          }
+          </style>`
       )
       .addTo(map);
+
+    let ctx = document.getElementById("dengueLineChart").getContext("2d");
+    const dengueLineChart = new Chart(ctx, {
+      type: "line",
+      data: {
+        labels: ["2016", "2017", "2018", "2019", "2020", "2021"],
+        datasets: [
+          {
+            label: "Dengue Cases Recorded",
+            data: regionsDengueCases[selectedRegionId],
+            borderColor: "rgb(75, 192, 192)",
+            borderWidth: 1,
+          },
+        ],
+      },
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true,
+          },
+        },
+      },
+    });
 
     if (
       map.getFeatureState({ source: "regions", id: selectedRegionId }).select ==
@@ -447,6 +511,7 @@ map.on("load", function () {
     document.getElementById("selectedCount").innerHTML = regionCount;
   });
 
+  // Hover function in regions-fill layer
   map.on("mousemove", "regions-fill", (e) => {
     document.getElementById("pd").innerHTML = `<h6>${
       e.features[0].properties.ADM1ALT1EN
@@ -465,6 +530,7 @@ map.on("load", function () {
       "<p>Hover over a region to see the number of Dengue Cases!</p>";
   });
 
+  // Click function when provinces-fill layer is clicked
   map.on("click", "provinces-fill", function (e) {
     selectedProvinceId = e.features[0].id;
     let index = selectedProvinceArr.indexOf(selectedProvinceId);
@@ -514,6 +580,7 @@ map.on("load", function () {
     document.getElementById("selectedCount").innerHTML = provinceCount;
   });
 
+  // Hover function in provinces-fill layer
   map.on("mousemove", "provinces-fill", (e) => {
     document.getElementById("pd").innerHTML = `<h6>${
       e.features[0].properties.province
